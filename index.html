@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego | 現場職人×AI活用</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#1a1a1a;font-size:15px;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #eee;padding:0 20px;}
+.nav-inner{max-width:680px;margin:0 auto;height:52px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:13px;font-weight:700;letter-spacing:1px;color:#1a1a1a;}
+.nav-logo span{color:#888;font-weight:400;margin-left:4px;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{font-size:12px;color:#555;font-weight:500;}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 20px;}
+
+.hero{padding:48px 20px 40px;max-width:680px;margin:0 auto;text-align:center;}
+.hero-icon{width:90px;height:90px;border-radius:50%;border:2px solid #e0e0e0;margin:0 auto 20px;overflow:hidden;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:40px;}
+.hero-icon img{width:100%;height:100%;object-fit:cover;}
+.hero-name{font-size:13px;color:#888;letter-spacing:2px;font-weight:500;margin-bottom:8px;}
+.hero-catch{font-size:22px;font-weight:900;line-height:1.5;letter-spacing:-0.5px;color:#1a1a1a;margin-bottom:8px;}
+.hero-sub{font-size:13px;color:#888;margin-bottom:28px;}
+.hero-stats{display:flex;justify-content:center;gap:0;border:1px solid #eee;border-radius:12px;overflow:hidden;margin-bottom:32px;}
+.stat{flex:1;padding:16px 8px;text-align:center;border-right:1px solid #eee;}
+.stat:last-child{border-right:none;}
+.stat-n{font-size:20px;font-weight:900;color:#1a1a1a;letter-spacing:-1px;}
+.stat-l{font-size:11px;color:#999;margin-top:2px;}
+
+section{padding:40px 0;border-top:1px solid #f0f0f0;}
+.section-tag{display:inline-block;background:#f5f5f5;color:#888;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;letter-spacing:1px;margin-bottom:10px;}
+.section-title{font-size:20px;font-weight:900;letter-spacing:-0.5px;margin-bottom:6px;}
+.section-desc{font-size:13px;color:#888;margin-bottom:24px;line-height:1.7;}
+
+.gift-block{background:#f0faf4;border-radius:16px;padding:24px;border:1px solid #c8e6d8;}
+.gift-head{font-size:16px;font-weight:900;color:#1a3a28;margin-bottom:4px;}
+.gift-sub{font-size:13px;color:#5a8a6a;margin-bottom:18px;}
+.gift-items{list-style:none;margin-bottom:22px;}
+.gift-items li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #d4ece0;font-size:14px;color:#1a3a28;}
+.gift-items li:last-child{border-bottom:none;}
+.num-badge{background:#06c755;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;flex-shrink:0;margin-top:2px;}
+.btn-line{display:flex;align-items:center;justify-content:center;gap:8px;background:#06c755;color:#fff;font-size:15px;font-weight:700;padding:16px;border-radius:10px;}
+
+.cards{display:flex;flex-direction:column;gap:12px;}
+.card{border:1px solid #eee;border-radius:12px;padding:18px;display:flex;align-items:flex-start;gap:14px;background:#fff;}
+.card-icon{width:44px;height:44px;border-radius:10px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.card-title{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px;}
+.card-desc{font-size:12px;color:#888;line-height:1.6;}
+.card-arrow{margin-left:auto;color:#ccc;font-size:18px;align-self:center;flex-shrink:0;}
+
+.sns-list{display:flex;flex-direction:column;gap:10px;}
+.sns-btn{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid #eee;border-radius:10px;font-size:14px;font-weight:500;color:#1a1a1a;background:#fff;}
+.sns-ic{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.sns-ic.ig{background:#fce4ec;}
+.sns-ic.yt{background:#ffebee;}
+.sns-ic.line{background:#e8f8ef;}
+.sns-btn-arrow{margin-left:auto;color:#ddd;}
+
+.about-body{font-size:14px;color:#444;line-height:1.9;margin-bottom:24px;}
+.about-body strong{color:#1a1a1a;font-weight:700;}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.about-tag{background:#f5f5f5;color:#555;font-size:12px;padding:5px 13px;border-radius:20px;}
+
+.faq-list{display:flex;flex-direction:column;gap:0;}
+.faq-item{border-bottom:1px solid #f0f0f0;padding:16px 0;}
+.faq-q{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:6px;display:flex;gap:8px;}
+.faq-q::before{content:'Q.';color:#888;font-weight:400;flex-shrink:0;}
+.faq-a{font-size:13px;color:#666;line-height:1.7;padding-left:22px;}
+
+footer{background:#1a1a1a;color:#888;padding:32px 20px;text-align:center;margin-top:40px;}
+.footer-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+.footer-sub{font-size:12px;margin-bottom:16px;}
+.footer-sns{display:flex;justify-content:center;gap:16px;margin-bottom:16px;}
+.footer-sns a{font-size:12px;color:#aaa;}
+.footer-copy{font-size:11px;color:#555;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">@setubiyaosusume</div>
+    <div class="nav-links">
+      <a href="#gift">無料特典</a>
+      <a href="#about">自己紹介</a>
+      <a href="#sns">SNS</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">
+    <img id="profile-icon" src="icon.png" alt="Diego" onerror="this.style.display='none';this.parentNode.innerHTML='🔧'">
+  </div>
+  <div class="hero-name">@setubiyaosusume</div>
+  <div class="hero-catch">現場で汗かいてきたやつが、<br>一番AIを使いこなせる。</div>
+  <div class="hero-sub">設備メンテ20年 × 合同会社DIEGO代表 × AI活用発信</div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-n">20年</div>
+      <div class="stat-l">現場経験</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">毎日</div>
+      <div class="stat-l">情報発信</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">1億円</div>
+      <div class="stat-l">売上目標</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="gift">
+    <div class="section-tag">FREE GIFT</div>
+    <div class="section-title">無料プレゼント</div>
+    <div class="section-desc">LINE登録いただいた方に、現場で即使える特典3点セットをお届けしています。</div>
+    <div class="gift-block">
+      <div class="gift-head">特典3点セット — 無料配布中</div>
+      <div class="gift-sub">コピペで今日から使えます</div>
+      <ul class="gift-items">
+        <li><span class="num-badge">特典①</span>現場職人向けAIプロンプト30選</li>
+        <li><span class="num-badge">特典②</span>作業報告書テンプレ10種</li>
+        <li><span class="num-badge">特典③</span>お客様説明文・LINE返信の文例50選</li>
+      </ul>
+      <a class="btn-line" href="https://lin.ee/SnYY4LS">
+        <span style="font-size:18px;">💬</span> LINEで無料受け取る
+      </a>
+    </div>
+  </section>
+
+  <section id="theme">
+    <div class="section-tag">CONTENTS</div>
+    <div class="section-title">発信テーマ</div>
+    <div class="section-desc">現場で働くすべての人に、AIを身近にする情報をお届けしています。</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <div>
+          <div class="card-title">現場で使えるAI活用術</div>
+          <div class="card-desc">ChatGPTを使った報告書作成・返信文・見積もり説明。難しい知識は不要。</div>
+        </div>
+        <div class="card-arrow">›</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <div>
+          <div class="card-title">設備メンテ20年の現場知識</div>
+          <div class="card-desc">空調・配管・電気設備。職人目線のリアルな情報を発信。</div>
+        </div>
+        <div class="card-arrow">›</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <div>
+          <div class="card-title">職人が稼ぐための仕組みづくり</div>
+          <div class="card-desc">副業・独立・SNS発信。技術を持つ人間が正当に評価される時代へ。</div>
+        </div>
+        <div class="card-arrow">›</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sns">
+    <div class="section-tag">SNS</div>
+    <div class="section-title">各SNSはこちら</div>
+    <div class="section-desc">毎日インスタを更新中。現場とAIのリアルを発信しています。</div>
+    <div class="sns-list">
+      <a class="sns-btn" href="https://www.instagram.com/setubiyaosusume/">
+        <div class="sns-ic ig">📸</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;">Instagram</div>
+          <div style="font-size:12px;color:#888;">@setubiyaosusume · 毎日更新</div>
+        </div>
+        <div class="sns-btn-arrow">›</div>
+      </a>
+      <a class="sns-btn" href="#">
+        <div class="sns-ic yt">▶</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;">YouTube</div>
+          <div style="font-size:12px;color:#888;">設備屋×AI活用チャンネル</div>
+        </div>
+        <div class="sns-btn-arrow">›</div>
+      </a>
+      <a class="sns-btn" href="https://lin.ee/SnYY4LS">
+        <div class="sns-ic line">💬</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;">LINE公式</div>
+          <div style="font-size:12px;color:#888;">登録で無料特典3点プレゼント</div>
+        </div>
+        <div class="sns-btn-arrow">›</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-tag">ABOUT</div>
+    <div class="section-title">自己紹介</div>
+    <p class="about-body">
+      設備メンテナンス歴<strong>20年</strong>の現役職人。空調・配管・電気設備を専門とし、現場一筋でキャリアを積んできました。<br><br>
+      40代でAIに出会い、「現場で汗かいてきた人間こそ、AIを本当に使いこなせる」と確信。<strong>合同会社DIEGO</strong>を設立し、現場で働くすべての人にAI活用を届ける発信を開始。<br><br>
+      難しい話は抜きにして、<strong>明日の現場から使える</strong>情報だけをお届けします。目標は<strong>売上1億円</strong>。現場出身者が正当に評価される時代をつくります。
+    </p>
+    <div class="about-tags">
+      <span class="about-tag">#現場職人</span>
+      <span class="about-tag">#AI活用</span>
+      <span class="about-tag">#設備メンテ</span>
+      <span class="about-tag">#ChatGPT</span>
+      <span class="about-tag">#副業・独立</span>
+      <span class="about-tag">#合同会社DIEGO</span>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-tag">FAQ</div>
+    <div class="section-title">よくある質問</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">AIって現場仕事に本当に使えるの？</div>
+        <div class="faq-a">使えます。報告書・返信文・見積もり説明など、毎日の事務作業が大幅に減ります。難しい知識は一切不要です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">LINE登録したら何が届きますか？</div>
+        <div class="faq-a">登録直後に特典3点セット（AIプロンプト30選・報告書テンプレ10種・返信文例50選）が自動で届きます。すべて無料です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">設備屋以外の職人でも参考になりますか？</div>
+        <div class="faq-a">はい。発信テーマは「現場で働くすべての人」です。建設・塗装・電気・管工事など、どんな現場の方にも使える内容です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Diegoさんへの連絡はどこから？</div>
+        <div class="faq-a">LINE公式アカウントへメッセージをお送りください。できる限り返信します。</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-name">DIEGO</div>
+  <div class="footer-sub">設備メンテ20年 × 合同会社DIEGO代表</div>
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/setubiyaosusume/">Instagram</a>
+    <a href="#">YouTube</a>
+    <a href="https://lin.ee/SnYY4LS">LINE</a>
+  </div>
+  <div class="footer-copy">© 2026 合同会社DIEGO</div>
+</footer>
+
+</body>
+</html>
