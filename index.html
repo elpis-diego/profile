@@ -71,6 +71,28 @@ section{padding:40px 0;border-top:1px solid #f0f0f0;}
 .faq-q::before{content:'Q.';color:#888;font-weight:400;flex-shrink:0;}
 .faq-a{font-size:13px;color:#666;line-height:1.7;padding-left:22px;}
 
+/* GenbaTalk app section */
+.app-block{background:#16294A;border-radius:16px;overflow:hidden;color:#F6F2E9;box-shadow:0 10px 30px rgba(22,41,74,.2);}
+.app-scene{width:100%;height:190px;object-fit:cover;object-position:center 38%;display:block;}
+.app-inner{padding:0 22px 24px;}
+.app-head{display:flex;align-items:center;gap:14px;margin-top:-40px;position:relative;}
+.app-icon{width:76px;height:76px;border-radius:18px;border:3px solid #16294A;box-shadow:0 6px 16px rgba(0,0,0,.35);}
+.app-name{font-size:19px;font-weight:900;color:#fff;letter-spacing:-.3px;}
+.app-tag{font-size:12px;color:#F5B301;font-weight:700;margin-top:2px;}
+.app-catch{font-size:23px;font-weight:900;color:#fff;margin:18px 0;line-height:1.4;letter-spacing:-.5px;}
+.app-catch b{color:#F5B301;}
+.app-demo{background:rgba(255,255,255,.06);border-radius:12px;padding:16px;margin-bottom:16px;}
+.d-say{font-size:12px;color:#F5B301;font-weight:800;}
+.d-say span{display:block;color:#cdd6e4;font-weight:400;font-size:13px;margin-top:5px;line-height:1.65;}
+.d-arrow{text-align:center;color:#F5B301;font-size:18px;margin:10px 0;}
+.d-rep{background:#fff;color:#232323;border-radius:9px;padding:13px 14px;font-size:13px;line-height:1.6;}
+.d-rep b{color:#2C5E58;font-weight:800;}
+.app-feats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.app-feats span{background:rgba(255,255,255,.1);color:#F6F2E9;font-size:12px;font-weight:700;padding:7px 13px;border-radius:20px;}
+.app-price{font-size:14px;color:#cdd6e4;margin-bottom:14px;}
+.app-price b{font-size:27px;color:#F5B301;font-weight:900;vertical-align:-2px;}
+.app-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:#F5B301;color:#16294A;font-size:15px;font-weight:900;padding:16px;border-radius:11px;}
+
 footer{background:#1a1a1a;color:#888;padding:32px 20px;text-align:center;margin-top:40px;}
 .footer-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
 .footer-sub{font-size:12px;margin-bottom:16px;}
@@ -86,6 +108,7 @@ footer{background:#1a1a1a;color:#888;padding:32px 20px;text-align:center;margin-
     <div class="nav-logo">@setubiyaosusume</div>
     <div class="nav-links">
       <a href="#gift">無料特典</a>
+      <a href="#app">アプリ</a>
       <a href="#about">自己紹介</a>
       <a href="#sns">SNS</a>
       <a href="#faq">FAQ</a>
@@ -133,6 +156,33 @@ footer{background:#1a1a1a;color:#888;padding:32px 20px;text-align:center;margin-
       <a class="btn-line" href="https://lin.ee/SnYY4LS">
         <span style="font-size:18px;">💬</span> LINEで無料受け取る
       </a>
+    </div>
+  </section>
+
+  <section id="app">
+    <div class="section-tag">APP</div>
+    <div class="section-title">現場アプリ「GenbaTalk」</div>
+    <div class="section-desc">設備メンテ20年の現場屋が、自分が欲しくて作ったアプリです。</div>
+    <div class="app-block">
+      <img class="app-scene" src="genbatalk-scene.png" alt="現場で使うGenbaTalk">
+      <div class="app-inner">
+        <div class="app-head">
+          <img class="app-icon" src="genbatalk-icon.png" alt="GenbaTalk アイコン">
+          <div>
+            <div class="app-name">GenbaTalk</div>
+            <div class="app-tag">現場で60秒しゃべるだけ</div>
+          </div>
+        </div>
+        <div class="app-catch">報告書は、<b>もう出来てる。</b></div>
+        <div class="app-demo">
+          <div class="d-say">🎤 話した言葉（60秒）<span>「田中様のお宅、エアコン効かんて。室外機のファンモーター交換して動作確認、技術料と部品で18,000円」</span></div>
+          <div class="d-arrow">↓</div>
+          <div class="d-rep">📄 <b>作業報告書</b>に自動整形。顧客・症状・作業内容・費用まで、話しただけで完成。PDFで出して、そのまま提出できます。</div>
+        </div>
+        <div class="app-feats"><span>📄 作業報告書</span><span>💬 お客様説明文</span><span>📷 写真エビデンス台帳</span></div>
+        <div class="app-price">まずはワンコイン <b>¥500</b> / 月〜　<span style="font-size:12px;">先行予約受付中</span></div>
+        <a class="app-cta" href="https://lin.ee/SnYY4LS">💬 LINEで先行予約・相談する</a>
+      </div>
     </div>
   </section>
 
